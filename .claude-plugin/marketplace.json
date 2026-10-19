@@ -1,0 +1,23 @@
+{
+  "name": "kaiva-postgres",
+  "description": "Kaiva Postgres MCP for Claude Code: read-only access to a PostgreSQL database",
+  "owner": { "name": "Kaiva", "email": "support@kaiv.ai" },
+  "plugins": [
+    {
+      "name": "postgres-mcp",
+      "source": "./",
+      "description": "Let Claude Code read a PostgreSQL database safely: one read-only statement per call, nothing written. Set DATABASE_URL in your environment. Drop-in replacement for the archived server-postgres.",
+      "relevance": {
+        "topic": "PostgreSQL",
+        "signals": {
+          "cli": ["psql", "pg_dump", "pg_restore"],
+          "filesRead": ["**/*.sql", "**/schema.prisma", "**/drizzle.config.*", "**/knexfile.*"],
+          "manifestDeps": [
+            { "file": "[/\\\\]package\\.json$", "pattern": "\"(pg|postgres|pg-promise|knex|kysely|@prisma/client|prisma|drizzle-orm|sequelize|typeorm|slonik)\"\\s*:" },
+            { "file": "[/\\\\](requirements\\.txt|pyproject\\.toml)$", "pattern": "psycopg|asyncpg|sqlalchemy" }
+          ]
+        }
+      }
+    }
+  ]
+}

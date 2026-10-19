@@ -33,6 +33,13 @@ claude mcp add postgres -- npx -y @kaiva/postgres-mcp postgresql://localhost/myd
 The `query` tool, its `sql` input and the table schema resources are the same, so nothing else
 changes.
 
+Other ways in, with `DATABASE_URL` set in your environment:
+
+- Claude Code plugin: `/plugin install postgres-mcp --marketplace ai-kaiva/postgres-mcp`
+- Gemini CLI extension: `gemini extensions install https://github.com/ai-kaiva/postgres-mcp`, then
+  `gemini extensions config kaiva-postgres-mcp` to enter the database URL
+- Docker: `docker run -i --rm -e DATABASE_URL ghcr.io/ai-kaiva/postgres-mcp` once the image is published
+
 ## Why switch
 
 The archived server is no longer maintained: Anthropic archived it in 2025 as a reference example
@@ -141,7 +148,7 @@ whose `.env` holds `DATABASE_URL`:
 npx @kaiva/bridge push mydb --db
 ```
 
-Your database must be reachable from the internet. https://kaiv.ai/bridge
+Your database must be reachable from the internet. https://kaiv.ai/bridge?utm_source=postgres-mcp&utm_medium=readme
 
 ## License
 

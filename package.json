@@ -1,6 +1,6 @@
 {
   "name": "@kaiva/postgres-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A maintained, read-only PostgreSQL MCP server. Drop-in replacement for the archived @modelcontextprotocol/server-postgres.",
   "license": "MIT",
   "type": "module",

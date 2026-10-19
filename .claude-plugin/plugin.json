@@ -1,0 +1,10 @@
+{
+  "name": "postgres-mcp",
+  "version": "0.1.1",
+  "description": "Read-only access to a PostgreSQL database for Claude Code. One read-only statement per call inside a transaction that is always rolled back; list_tables and describe_table to learn the schema. Set DATABASE_URL in your environment before starting Claude Code.",
+  "author": { "name": "Kaiva", "url": "https://kaiv.ai" },
+  "homepage": "https://github.com/ai-kaiva/postgres-mcp",
+  "repository": "https://github.com/ai-kaiva/postgres-mcp",
+  "license": "MIT",
+  "keywords": ["mcp", "postgres", "postgresql", "database", "read-only", "kaiva"]
+}

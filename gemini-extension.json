@@ -1,0 +1,20 @@
+{
+  "name": "kaiva-postgres-mcp",
+  "version": "0.1.1",
+  "description": "Read-only access to a PostgreSQL database for Gemini CLI: the maintained drop-in replacement for the archived server-postgres. Set the database URL once with: gemini extensions config kaiva-postgres-mcp",
+  "settings": [
+    {
+      "name": "Database URL",
+      "description": "PostgreSQL connection URL, for example postgresql://user:password@localhost:5432/mydb. A login that can only read is best.",
+      "envVar": "DATABASE_URL",
+      "sensitive": true
+    }
+  ],
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@kaiva/postgres-mcp@0.1.1"],
+      "cwd": "${extensionPath}"
+    }
+  }
+}
